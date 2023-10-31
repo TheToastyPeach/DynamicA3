@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "BetterBridge",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "content_scripts": [
+        {
+          "matches": ["https://bridge.uleth.ca/*"],
+          "css": ["css/styles.css"],
+          "js": ["js/scripts.js"]
+        }
+      ],
+      "action": {
+        "default_popup": "popup.html"
+      }
+}
