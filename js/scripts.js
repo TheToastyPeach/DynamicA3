@@ -30,37 +30,34 @@
 // );
 
 
-var tableData = [];
 
-const cells = document.querySelectorAll('td');
-var index = 0;
-var tableLength = 0;
-// Loop through each table cell and replace it with a button element
-cells.forEach((cell) => {
-    if (tableLength % 2 != 0) {
-        if (cell.classList.contains('mpdefault')) {
-            // Store the HTML content of the table cell in the tableData array
-            tableData[index] = cell.innerHTML;
-        
-            // Create a new button element and replace the table cell with it
-            const button = document.createElement('button');
-            button.textContent = cell.innerText;
-            cell.parentNode.replaceChild(button, cell);
-        
-            // Store the HTML content of the button element in the tableData array
-            tableData[index] = button.outerHTML;
-       
-            // Increment the index variable
-
-        };
-    };
-    index++;
-    tableLength++;
-    
-  });
+//Gets all tables
+const tables = document.querySelectorAll('table');
+//console.log(tables);
+var evenTable = 0;
 
 
-console.log(tableData);
+// Loop through each table
+tables.forEach((table) => {
+    // Create a new div element
+    const div = document.createElement('div');
+
+    // Get all td elements in the table
+    const tds = table.querySelectorAll('td');
+
+    // Loop through each td
+    tds.forEach((td) => {
+            // Create a new div for each td element in the table 
+            const tdDiv = document.createElement('div');
+            tdDiv.innerHTML = td.innerHTML;
+            td.parentNode.replaceChild(tdDiv, td);
+    });
+
+    div.innerHTML = table.innerHTML;
+    table.parentNode.replaceChild(div, table);
+});
+
+
 
 
 
