@@ -3,6 +3,9 @@
     "name": "BetterBridge",
     "description": "Base Level Extension",
     "version": "1.0",
+    "icons" : {
+        "16": "images/ExtLogo.png"
+      },
     "content_scripts": [
         {
           "matches": ["https://bridge.uleth.ca/*"],
@@ -12,5 +15,11 @@
       ],
       "action": {
         "default_popup": "popup.html"
-      }
+      },
+      "web_accessible_resources": [
+        {
+          "resources": [ "images/*"],
+          "matches": ["https://www.ulethbridge.ca/*"]
+        }
+      ]
 }

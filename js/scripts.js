@@ -31,8 +31,8 @@
 
 
 
-//Gets all tables
-const tables = document.querySelectorAll('table');
+//Gets all tables with the class menuplaintable
+const tables = document.querySelectorAll('table.menuplaintable');
 //console.log(tables);
 var evenTable = 0;
 
