@@ -41,7 +41,7 @@ var href;
 tables.forEach((table) => {
     // Create a new div element to containt the new elements 
     const div = document.createElement('div');
-    div.classList.add('PrettyDiv');
+    div.classList.add('prettyDiv');
 
     // Get all td elements in the table
     const tds = table.querySelectorAll('td');
@@ -52,23 +52,24 @@ tables.forEach((table) => {
         if (evenTable % 2 != 0) {
             // Create a new div for each td element in the table 
             const tdDiv = document.createElement('div');
+            tdDiv.classList.add('buttonBox');
             tdDiv.innerHTML = td.innerHTML;
     
             // Replace the td element with the new div element
             td.parentNode.replaceChild(tdDiv, td);
     
-            const aElements = tdDiv.querySelectorAll('a');
+            const aElement = tdDiv.querySelector('a');
     
-            aElements.forEach((a) => {
-                href = a.href;
-                console.log(href);
-                const tempButton = document.createElement('button');
-                tempButton.textContent = a.textContent;
-                tempButton.classList.add('btn');
-                tempButton.dataset.href = a.href;
-                
-                a.parentNode.replaceChild(tempButton, a);
-            });
+            // Choosing only the 1st element in an <a> to change into a button
+            if(aElement) {
+                    console.log(href);
+                    const tempButton = document.createElement('button');
+                    tempButton.textContent = aElement.textContent;
+                    tempButton.classList.add('btn');
+                    //sets a data-href attribute to the button to be accessed later
+                    tempButton.dataset.href = aElement.href; 
+                    aElement.parentNode.replaceChild(tempButton, aElement);
+            };
         } else {
             // Remove the empty td element from the table
             td.remove();
@@ -76,13 +77,14 @@ tables.forEach((table) => {
         evenTable++;
     });
 
-    // Attach the event listener to the document and use event delegation
+    // Check for button clicks
     document.addEventListener('click', function (event) {
         // If the clicked element doesn't have the right selector, bail
         if (!event.target.matches('.btn')) return;
         var href = event.target.dataset.href;
         console.log("clicked");
-        window.open(href, '_blank');
+        //changes the window location to the href of the button when its clifcked
+        window.location.href = href;
     });
     
     div.innerHTML = table.innerHTML;
@@ -90,14 +92,6 @@ tables.forEach((table) => {
 });
 
 
-// // Attach the event listener to the document and use event delegation
-// document.addEventListener('click', function (event) {
-//     // If the clicked element doesn't have the right selector, bail
-//     if (!event.target.matches('.btn')) return;
-
-//     console.log("clicked");
-//     window.open(href, '_blank');
-// });
 
 
 
