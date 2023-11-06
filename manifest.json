@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "BetterBridge",
-    "description": "Base Level Extension",
+    "description": "Makes the bridge better",
     "version": "1.0",
     "icons" : {
         "16": "images/ExtLogo.png"

@@ -37,6 +37,8 @@ const tables = document.querySelectorAll('table.menuplaintable');
 var evenTable = 0;
 var href;
 
+// Main table display targeting
+//-------------------------------------------------------------
 // Loop through each table
 tables.forEach((table) => {
     // Create a new div element to containt the new elements 
@@ -53,8 +55,26 @@ tables.forEach((table) => {
             // Create a new div for each td element in the table 
             const tdDiv = document.createElement('div');
             tdDiv.classList.add('buttonBox');
+
+            // Select the span element
+            var newSpan = td.querySelector('span');
+            //check if there is a span
+            if (newSpan) {
+                // split the text into words - co-pilot code
+                var words = newSpan.textContent.split(' ');
+
+                // check if the wrods are greater than 35
+                if (words.length > 35) {
+                    // Get the first 35 words - co-pilot code
+                    var limitedWords = words.slice(0, 35);
+
+                    // join the words back together and update the span text - co-pilot code
+                    newSpan.textContent = limitedWords.join(' ') + '...';
+                }
+            }
+            //create a div element with the new span element
             tdDiv.innerHTML = td.innerHTML;
-    
+
             // Replace the td element with the new div element
             td.parentNode.replaceChild(tdDiv, td);
     
@@ -62,7 +82,7 @@ tables.forEach((table) => {
     
             // Choosing only the 1st element in an <a> to change into a button
             if(aElement) {
-                    console.log(href);
+                    //console.log(href);
                     const tempButton = document.createElement('button');
                     tempButton.textContent = aElement.textContent;
                     tempButton.classList.add('btn');
@@ -71,7 +91,7 @@ tables.forEach((table) => {
                     aElement.parentNode.replaceChild(tempButton, aElement);
             };
         } else {
-            // Remove the empty td element from the table
+            // Remove the empty td elements from the table (Not sure why they are there to being with)
             td.remove();
         }
         evenTable++;
@@ -90,6 +110,7 @@ tables.forEach((table) => {
     div.innerHTML = table.innerHTML;
     table.parentNode.replaceChild(div, table);
 });
+//-------------------------------------------------------------
 
 
 
