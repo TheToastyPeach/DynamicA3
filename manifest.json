@@ -6,6 +6,9 @@
     "icons" : {
         "16": "images/ExtLogo.png"
       },
+    "permissions": [
+        "storage"
+      ],
     "content_scripts": [
         {
           "matches": ["https://bridge.uleth.ca/*"],
