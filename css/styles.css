@@ -9,6 +9,16 @@
     margin-right: 10%;
 }
 
+.navDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .buttonBox {
     display: flex;
     flex-direction: column;
@@ -19,6 +29,8 @@
     width: 250px;
     
 }
+
+
 
 button {
     text-decoration: none;
@@ -35,5 +47,25 @@ button {
 button:hover {
     border-radius: 10px;
     background-color: #ffe2509f;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-nav {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 14px;
+    display: inline-block;
+    background-color: #06559e00;
+    transition: 0.3s;
+    border: 0px;
+    box-shadow: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-nav:hover {
+    border-radius: 0px;
+    background-color: #3d3fccc5;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
