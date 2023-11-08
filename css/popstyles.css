@@ -1,7 +1,7 @@
 
 html, body {
     margin: 5;
-    min-height: 200px;
+    min-height: 100px;
     min-width: 150px;
     display: flex;
     flex-direction: column;
@@ -14,3 +14,30 @@ img {
     display: block;
 }
 
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#check {
+    display: none;
+    position: absolute;
+}
+
+label[for="check"] {
+    transition: 0.4s;
+    opacity: 0.5;
+    display: inline-block;
+    width: 100px;
+    height: 100px; 
+    background: url('images/ExtLogo.png') no-repeat;
+    cursor: pointer;
+}
+
+#check:checked + label[for="check"] {
+    transition: 0.4s;
+    opacity: 1;
+    background: url('images/ExtLogo.png') no-repeat;
+}
