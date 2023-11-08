@@ -4,7 +4,8 @@
     "description": "Makes the bridge better",
     "version": "1.0",
     "icons" : {
-        "16": "images/TextLogo.png"
+        "16": "images/TextLogo.png",
+        "48": "images/TexttLogo.png"
       },
     "permissions": [
         "storage"

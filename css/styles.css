@@ -1,22 +1,23 @@
-
 .prettyDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
     gap: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 75px;
+    margin-right: 35%;
 }
 
+.infotextdiv {
+    margin-left: 80px;
+}
 .navDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
     gap: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 150px;
 }
 
 .buttonBox {
@@ -27,8 +28,31 @@
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.158);
     min-height: 25px;
     width: 250px;
+    background-color: white;
+}
+
+div.pagebodydiv {
+    margin-left: 105px;
     
 }
+
+.pagetitlediv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    min-height: 250px;
+}
+
+.pagetitlediv h2 {
+    padding: 0;
+    margin-left: 145px;
+    font-weight: bold;
+    background-image: url('images/uofl_landscape') !important;
+    background-position: center center;
+    background-size: cover;
+}
+
 
 button {
     text-decoration: none;
