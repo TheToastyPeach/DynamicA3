@@ -5,7 +5,7 @@
     "version": "1.0",
     "icons" : {
         "16": "images/TextLogo.png",
-        "48": "images/TexttLogo.png"
+        "48": "images/TextLogo.png"
       },
     "permissions": [
         "storage"
@@ -24,6 +24,9 @@
         {
           "resources": [ "images/*"],
           "matches": ["https://www.ulethbridge.ca/*"]
+        }, {
+          "resources": [ "images/uofl_landscape.jpg"],
+          "matches": ["https://bridge.uleth.ca/*"]
         }
       ]
 }
